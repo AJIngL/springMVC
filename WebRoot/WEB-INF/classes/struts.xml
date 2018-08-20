@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+	    
+   
+    <package name="default" namespace="/" extends="struts-default">
+		 <!-- url访问 hello ，指向  class中的类，默认执行 execute方法，当返回 seccess的时候
+		      则转发到 welcome.jsp-->
+		       
+		<action name="login" class="com.login.LoginAction" method="login">
+			<result name="success">/welcome.jsp</result>			
+		</action>
+		<action name="add" class="com.login.LoginAction" method="add">
+			<result name="success">/test01.jsp</result>			
+		</action>
+		
+		  <!-- 
+		<action name="login" class="com.login.LoginAction" >
+			<result name="loginsuccess">/welcome.jsp</result>
+			<result name="addsuccess">/test01.jsp</result>				
+		</action>
+		
+		<action name="login*" class="com.login.LoginAction" method="{1}" >
+			<result name="success">/login{1}.jsp</result>				
+		</action>-->
+			
+    </package>
+
+</struts>
